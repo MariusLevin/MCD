@@ -11,7 +11,7 @@ results = spotify.search(q='artist:weezer', type='artist')
 data = results['artists']['items']
 
 for d in data:
-  print d['name']
+  print(d['name'])
 
 # client: e394642c72f1484fbe9661aecede6d6c
 # secret: fbc0bc0391224c1c8360d427c913eb4e
