@@ -1,3 +1,6 @@
+# LIBRAIRY
+import csv
+
 # FUNCTIONS
 def saveData(dictionary):
     with open('../../data/data.txt', 'w') as f:
@@ -9,14 +12,20 @@ def loadData():
     with open('../../data/data.txt') as r:
         for item in r:
             if ':' in item:
-                key,value = item.split(':', 1)
-                dictionary[key]=value
+                key, value = item.split(':', 1)
+                value = value.replace('\'', '')
+                value = value.replace(' ', '')
+                value = value.replace('\n', '')
+                value = value.replace('[', '')
+                value = value.replace(']', '')
+                value = value.split(',')
+                dictionary[key] = value
             else:
                 pass # deal with bad lines of text here
     return dictionary
 
 # TESTS
-d = {"key1": [], "key2": ['1', '2', '3']}
+d = {'key1': [], 'key2': ['1', '2', '3']}
 saveData(d)
 d2 = loadData()
 print(d2)
