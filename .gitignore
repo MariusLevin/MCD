@@ -1,2 +1,2 @@
-.vscode/settings.json
-src/NETWORK/__pycache__/dataPersistance.cpython-36.pyc
+.vscode/*
+src/NETWORK/__pycache__/*
